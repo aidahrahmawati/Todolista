@@ -1,20 +1,106 @@
 body {
-    font-size: 15pt;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 20px;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 table {
-  margin-top: 0px;
-  border-collapse: collapse;
   width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
 th, td {
-  border: 1px solid black;
-  padding: 8px;
-  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
 }
 
 th {
-background-color: rgba(35, 30, 150, 1);
+  background-color: #007bff;
+  color: white;
+  text-transform: uppercase;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+.tombol {
+  display: block;
+  width: 150px;
+  text-align: center;
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 20px auto;
+  transition: 0.3s;
+}
+
+.tombol:hover {
+  background-color: #218838;
+}
+
+.btn-warning, .btn-danger {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: black;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-status {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.btn-status[data-status="Belum Selesai"] {
+  background-color: #dc3545; /* Merah */
+  color: white;
+}
+
+.btn-status[data-status="Sedang Dikerjakan"] {
+  background-color: #ffc107; /* Kuning */
+  color: black;
+}
+
+.btn-status[data-status="Selesai"] {
+  background-color: #28a745; /* Hijau */
+  color: white;
 }
