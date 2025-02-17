@@ -1,4 +1,4 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import {
   getFirestore,
   collection,
@@ -90,7 +90,6 @@ function ubahStatus(tombol) {
 }
 
 
-
   // Event listener untuk hapus tugas
   $(".tombol-hapus").click(async function () {
     await hapustugas($(this).attr("data-id"));
@@ -99,13 +98,7 @@ function ubahStatus(tombol) {
 
   // Event listener untuk ubah tugas
   $(".ubah").click(async function () {
-    let docId = $(this).attr("data-id");
-    let tugas = $(this).attr("data-tugas");
-    let status = $(this).attr("data-status");
-    let prioritas = $(this).attr("data-prioritas");
-    let tanggal = $(this).attr("data-tanggal");
-
-    window.location.replace(`ubahtugas.html?docId=${docId}&tugas=${tugas}&status=${status}&prioritas=${prioritas}&tanggal=${tanggal}`);
+    window.location.replace("ubahtugas.html?docId=" + $(this).attr("data-id"));
   });
 
 // Gunakan event delegation agar berfungsi pada elemen dinamis
