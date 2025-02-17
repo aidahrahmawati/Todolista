@@ -1,4 +1,4 @@
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import {
   getFirestore,
   collection,
@@ -11,6 +11,7 @@ import {
   orderBy,
   updateDoc
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyBm9HdJ92vSLrKRclI6Z2J4bmvlFgR4AuU",
@@ -89,17 +90,16 @@ function ubahStatus(tombol) {
   }
 }
 
+// Event listener untuk hapus tugas
+$(".tombol-hapus").click(async function () {
+  await hapustugas($(this).attr("data-id"));
+  location.reload();
+});
 
-  // Event listener untuk hapus tugas
-  $(".tombol-hapus").click(async function () {
-    await hapustugas($(this).attr("data-id"));
-    location.reload();
-  });
-
-  // Event listener untuk ubah tugas
-  $(".ubah").click(async function () {
-    window.location.replace("ubahtugas.html?docId=" + $(this).attr("data-id"));
-  });
+// Event listener untuk ubah tugas
+$(".ubah").click(async function () {
+  window.location.replace("ubahtugas.html?docId=" + $(this).attr("data-id"));
+});
 
 // Gunakan event delegation agar berfungsi pada elemen dinamis
 $(document).on("click", ".btn-status", function () {
