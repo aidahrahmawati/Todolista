@@ -1,10 +1,10 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import {
   getFirestore,
   collection,
   addDoc,
-  getDoc,
   getDocs,
+  getDoc,
   deleteDoc,
   doc,
   query,
@@ -13,15 +13,14 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCksetmQe_ec2BH6g5MKqQU_1K1U6htmww",
-  authDomain: "data-7d32f.firebaseapp.com",
-  projectId: "data-7d32f",
-  storageBucket: "data-7d32f.appspot.com",
-  messagingSenderId: "156748846014",
-  appId: "1:156748846014:web:4269883b14bdb400b2dfef",
-  measurementId: "G-W3SBB85TF1"
+  apiKey: "AIzaSyBm9HdJ92vSLrKRclI6Z2J4bmvlFgR4AuU",
+  authDomain: "mang-yana.firebaseapp.com",
+  projectId: "mang-yana",
+  storageBucket: "mang-yana.appspot.com",
+  messagingSenderId: "1094982396668",
+  appId: "1:1094982396668:web:2d103526ab40a59efc0579",
+  measurementId: "G-MF48P7VG5P"
 };
-
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
