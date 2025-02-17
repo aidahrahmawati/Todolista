@@ -90,27 +90,6 @@ function ubahStatus(tombol) {
 }
 
 
-$(document).ready(async function () {
-  let elemenDaftar = $("#daftar-tugas > thead");
-  let daftartugas = await ambildaftartugas();
-  let nomor = 1;
-
-  daftartugas.forEach((data) => {
-    elemenDaftar.append(
-      `<tr>
-        <th>${nomor}</th>
-        <td>${data.tugas}</td>
-        <td>
-          <button class="btn-status" data-status="${data.status}" data-id="${data.id}">${data.status}</button>
-        </td>
-        <td>${data.prioritas}</td>
-        <td>${data.tanggal}</td>
-        <td><button class="btn btn-warning ubah" data-id="${data.id}" data-tugas="${data.tugas}" data-status="${data.status}" data-prioritas="${data.prioritas}" data-tanggal="${data.tanggal}">Ubah</button></td>
-        <td><a href="#" class="btn btn-danger tombol-hapus" data-id="${data.id}">Hapus</a></td>
-      </tr>`
-    );
-    nomor++;
-  });
 
   // Event listener untuk hapus tugas
   $(".tombol-hapus").click(async function () {
@@ -128,7 +107,6 @@ $(document).ready(async function () {
 
     window.location.replace(`ubahtugas.html?docId=${docId}&tugas=${tugas}&status=${status}&prioritas=${prioritas}&tanggal=${tanggal}`);
   });
-});
 
 // Gunakan event delegation agar berfungsi pada elemen dinamis
 $(document).on("click", ".btn-status", function () {
