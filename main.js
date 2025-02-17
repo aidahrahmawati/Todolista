@@ -1,4 +1,4 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import {
   getFirestore,
   collection,
@@ -105,7 +105,7 @@ $(document).ready(async function () {
         </td>
         <td>${data.prioritas}</td>
         <td>${data.tanggal}</td>
-        <td><button class="btn btn-warning ubah" data-id="${data.id}" data-tugas="${data.tugas}" data-status="${data.status}" data-prioritas="${data.prioritas}" data-tanggal="${data.tanggal}">Ubah</button></td>
+        <td><button class="btn btn-warning ubah" data-id="${data.id}">Ubah</button></td>
         <td><a href="#" class="btn btn-danger tombol-hapus" data-id="${data.id}">Hapus</a></td>
       </tr>`
     );
@@ -120,13 +120,7 @@ $(document).ready(async function () {
 
   // Event listener untuk ubah tugas
   $(".ubah").click(async function () {
-    let docId = $(this).attr("data-id");
-    let tugas = $(this).attr("data-tugas");
-    let status = $(this).attr("data-status");
-    let prioritas = $(this).attr("data-prioritas");
-    let tanggal = $(this).attr("data-tanggal");
-
-    window.location.replace(`ubahtugas.html?docId=${docId}&tugas=${tugas}&status=${status}&prioritas=${prioritas}&tanggal=${tanggal}`);
+    window.location.replace("ubahtugas.html?docId=" + $(this).attr("data-id"));
   });
 });
 
