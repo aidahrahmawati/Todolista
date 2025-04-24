@@ -7,35 +7,47 @@
   <title>to-do list</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script type="module" src="main.js"></script>
-  <link rel="stylesheet" href="tambah.css">
 
 </head>
 
 <body class="m-3">
   <h1>tambah tugas</h1>
+  <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="fanjusllse">
+    menu
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark">
+    <li><a class="dropdown-item active" href="index.html">back</a></li>
+</div
 
   <form class="mb-3">
     <div class="mb-3">
       <label class="form-label">tugas</label>
-      <input type="text" class="form-control" id="input-tugas">
+      <input type="text" class="form-control" id="input-tugas" required>
     </div>
     <div class="mb-3">
-      <label class="form-label">status</label>
-      <input type="text" class="form-control" id="input-status">
+      <select class="form-select" aria-label="Default select example" id="input-status">
+    <option selected>status</option>
+    <option value="selesai">selesai</option>
+    <option value="sedang dikerjakan">dikerjakan</option>
+    <option value="belum selesai">belum</option>
+  </select>
     </div>
     <form class="mb-3">
-      <div class="mb-3">
-        <label class="form-label">prioritas</label>
-        <input type="text" class="form-control" id="input-prioritas">
-      </div>
+ <div class="mb-3">
+     <select class="form-select" aria-label="Default select example" id="input-prioritas">
+  <option selected>proritas</option>
+  <option value="tinggi🔴">tinggi</option>
+  <option value="sedang🟠">sedang</option>
+  <option value="rendah🔵">rendah</option>
+</select>
+</div>
       <div class="mb-3">
         <label class="form-label">tanggal</label>
-        <input type="text" class="form-control" id="input-tanggal">
+        <input type="date" class="form-control" id="input-tanggal">
       </div>
 
       <button type="submit" class="btn btn-primary" id="tombol-tambah">Simpan</button>
@@ -56,6 +68,15 @@
 
       tomboltambah.addEventListener('click', async function(e) {
         e.preventDefault();
+if (
+  elementugas.value.trim() === '' ||
+  elemenstatus.value === 'status' ||
+  elemenprioritas.value === 'proritas' ||
+  elementanggal.value === ''
+) {
+  alert('Semua field harus diisi dengan benar!');
+  return;
+}
         await tambahtugas(elementugas.value, elemenstatus.value, elemenprioritas.value, elementanggal.value);
         window.location.href = 'index.html'
       })
